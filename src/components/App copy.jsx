@@ -3,13 +3,12 @@ import { Feadback } from './FeadbackOptions/FeadbackOptions';
 import { Section } from './Section/Section';
 import { Statistic } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
+import { useState } from 'react';
 
-export class App extends Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
+const feedback = () => {
+  const [good, setGood] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(1);
 
   onLeaveFeedback = e => {
     const key = e.target.name;
@@ -57,4 +56,6 @@ export class App extends Component {
       </div>
     );
   }
+
 }
+
